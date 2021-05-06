@@ -7,6 +7,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/soheilhy/cmux"
 	"pkg.agungdp.dev/candi/codebase/factory"
+	"pkg.agungdp.dev/candi/codebase/factory/types"
 	"pkg.agungdp.dev/candi/config/env"
 )
 
@@ -41,4 +42,8 @@ func (h *restServerFiber) Serve() {
 
 func (h *restServerFiber) Shutdown(ctx context.Context) {
 	h.serverEngine.Shutdown()
+}
+
+func (h *restServerFiber) Name() string {
+	return string(types.REST)
 }
